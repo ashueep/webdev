@@ -1,28 +1,18 @@
 <!doctype html>
-<html>
 <body>
-
-
-    <form>
-      <input type="username" placeholder="username" id="text1" /><br />
-      <input type="password" placeholder="password" id="text2" /><br />
-      <input type="button" value="Login"  onclick="validate()" />
-  </form>
-  <script type="text/javascript">
- function validate(){
-      var username= document.getElementById("text1").value;
-      var password= document.getElementById("text2").value;
-      console.log(username, password);
-      if(username == "workshop" && password == "workshop")
-      {
-          alert( "validation succeeded" );
-          
-      }
-      else
-      {
-          alert("validation failed");
-      }
-      console.log("ja mar");
- }
-
-  </script>
+    <form action = "/adminauth" method = "POST">
+      <!-- {% comment %} <input type="username" placeholder="username" id="text1" /><br />
+       {% endcomment %} -->
+       <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label" row="4">username</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" size="50" placeholder="Message" name="username">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label" row="4">password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" size="50" placeholder="Message" name="password">
+        </div>
+      <!-- {% comment %} <input type="password" placeholder="password" id="text2" /><br /> {% endcomment %} -->
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</body>
+</html>

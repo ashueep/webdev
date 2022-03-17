@@ -59,10 +59,28 @@ app.post("/contact",async(req,res)=>{
 })
 app.get("/adminlogin",async(req,res)=>{
     try {
-        console.log(path.join(__dirname, '../frontend/html/adminlogin.html'));
-        res.sendFile(path.join(__dirname, '../frontend/html/adminlogin.html'));
+        console.log(path.join(__dirname, '../frontend/adminlogin.html'));
+        res.sendFile(path.join(__dirname, '../frontend/adminlogin.html'));
     } catch (error) {
         console.log(error);
+    }
+})
+
+app.post('/adminauth', async(req, res) => {
+    try {
+        console.log(req.body)
+        const username = req.body.username
+        const password = req.body.password
+        if(username == 'username' && password == 'password'){
+            // Write what HTML file to send when login is successful
+            res.send('LOGIN OK...')
+        } else {
+            // Write what to send when credentials are wrong.
+            res.send('INVALID CREDENTIALS')
+        }
+
+    } catch (err) {
+        console.log(err)
     }
 })
 
